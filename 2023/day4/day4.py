@@ -34,4 +34,7 @@ def part_two(lines):
 with open('day4_input.txt', 'r') as input:
   lines = input.read().splitlines()
   print('part1', part_one(lines))
+
+with open('day4_input.txt', 'r') as input:
+  lines = input.read().splitlines()
   print('part2', part_two(lines))
