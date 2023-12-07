@@ -1,24 +1,4 @@
 from collections import defaultdict
-from collections import Counter
-from itertools import product
-
-
-def get_score(x):
-    match [b for _, b in Counter(x).most_common()]:
-        case 5, *_:
-            return 1
-        case 4, *_:
-            return 2
-        case 3, 2, *_:
-            return 3
-        case 3, *_:
-            return 4
-        case 2, 2, *_:
-            return 5
-        case 2, *_:
-            return 6
-        case _:
-            return 7
 
 def part_one(input):
   hands = input.read().splitlines()
