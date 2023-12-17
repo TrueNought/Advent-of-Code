@@ -1,6 +1,9 @@
 from collections import deque
 
-def energize(r, c, chr, chc, grid):
+with open('day16_input.txt', 'r') as input:
+  grid = input.read().splitlines()
+
+def energize(r, c, chr, chc):
   visited = set()
   q = deque([(r, c, chr, chc)])
   energized = set()
@@ -43,9 +46,21 @@ def energize(r, c, chr, chc, grid):
 
   return len(energized)
 
-def part_one(input):
-  grid = input.read().splitlines()
-  return energize(0, -1, 0, 1, grid)
+def part_one():
+  return energize(0, -1, 0, 1)
 
-with open('day16_input.txt', 'r') as input:
-  print('part1', part_one(input))
+def part_two():
+  largest = 0
+
+  for r in range(len(grid)):
+    largest = max(largest, energize(r, -1, 0, 1))
+    largest = max(largest, energize(r, len(grid[0]), 0, -1))
+
+  for c in range(len(grid[0])):
+    largest = max(largest, energize(-1, c, 1, 0))
+    largest = max(largest, energize(len(grid), c, -1, 0))
+
+  return largest
+
+print('part1', part_one())
+print('part2', part_two())
