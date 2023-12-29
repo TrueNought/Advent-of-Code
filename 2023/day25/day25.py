@@ -11,8 +11,10 @@ def part_one(input):
     for node in v.split(' '):
       G.add_edge(k, node, capacity=1)
 
-  for source in list(G.nodes)[:-1]:
-    for sink in list(G.nodes)[1:]:
+  for i in range(len(list(G.nodes)) - 1):
+    for j in range(i + 1, len(list(G.nodes))):
+      source = list(G.nodes)[i]
+      sink = list(G.nodes)[j]
       cut, (a, b) = nx.minimum_cut(G, source, sink)
       if cut == 3:
         return len(a) * len(b)
