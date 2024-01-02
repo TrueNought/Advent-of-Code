@@ -1,6 +1,6 @@
 """
 Part 1: Cramer's rule to find solution for each pair of hailstones
-Part 2: 6 unkowns (x, y, z, dx, dy, d z) requires 6 equations. Tried np.linalg.solve with a system of 6 equations (2 pairs, 3 equations per pair with XY XZ YZ) but had slight floating point inaccuracy. Sympy worked without any issues
+Part 2: 6 unkowns (x, y, z, dx, dy, dz) requires 6 equations. Tried np.linalg.solve with a system of 6 equations (2 pairs, 3 equations per pair with XY XZ YZ) but had slight floating point inaccuracy. Sympy worked without any issues
 """
 
 import sympy as sp
